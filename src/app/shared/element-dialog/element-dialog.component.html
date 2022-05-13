@@ -1,0 +1,19 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Create Element</h1>
+<div mat-dialog-content> 
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="data.email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Cpf</mat-label>
+    <input matInput [(ngModel)]="data.cpf">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button *ngIf="!isChange"  [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+</div>
